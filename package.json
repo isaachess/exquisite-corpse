@@ -1,0 +1,28 @@
+{
+  "name": "exquisite-corpse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isaachess/exquisite-corpse.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isaachess/exquisite-corpse/issues"
+  },
+  "homepage": "https://github.com/isaachess/exquisite-corpse",
+  "devDependencies": {
+    "babel-core": "^5.8.3",
+    "babel-loader": "^5.3.2",
+    "webpack": "^1.10.5"
+  },
+  "dependencies": {
+    "angular": "^1.4.3",
+    "angular-ui-router": "^0.2.15"
+  }
+}
