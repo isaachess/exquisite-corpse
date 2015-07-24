@@ -1,5 +1,5 @@
 console.log('bobby')
-export class control {
+export class Control {
     constructor(){
         console.log('jones')
         this.here = "Jason's apartment"
