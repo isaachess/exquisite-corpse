@@ -1,3 +1,5 @@
+var _ = require('lodash')
+
 export function main($document) {
     return {
         restrict: 'A',
@@ -7,21 +9,25 @@ export function main($document) {
         link: link
     }
     function link(scope, el, attrs) {
+        if (!scope.drawPoints) scope.drawPoints = []
+        var throttledMove = _.throttle(onMousemove, 50)
+        var currentPath = []
         el.on('mousedown', (e) => {
-            el.on('mousemove', onMousemove)
+            currentPath = []
+            scope.drawPoints.push(currentPath)
+            el.on('mousemove', throttledMove)
             $document.on('mouseup', onMouseup)
         })
 
         function onMouseup(e) {
-            el.off('mousemove', onMousemove)
+            el.off('mousemove', throttledMove)
             $document.off('mouseup', onMouseup)
         }
 
         function onMousemove(e) {
             var x = e.pageX - el.prop('offsetLeft')
             var y = e.pageY - el.prop('offsetTop')
-            console.log('x', x)
-            console.log('y', y)
+            currentPath.push({x: x, y: y})
         }
     }
 
