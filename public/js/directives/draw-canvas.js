@@ -9,7 +9,6 @@ export function main($document) {
         link: link
     }
     function link(scope, el, attrs) {
-        if (!scope.drawPoints) scope.drawPoints = []
         var throttledMove = _.throttle(onMousemove, 50)
         var currentPath = []
         el.on('mousedown', (e) => {
@@ -28,6 +27,7 @@ export function main($document) {
             var x = e.pageX - el.prop('offsetLeft')
             var y = e.pageY - el.prop('offsetTop')
             currentPath.push({x: x, y: y})
+            scope.$apply(() => scope.drawPoints)
         }
     }
 
