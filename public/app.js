@@ -9,5 +9,5 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     console.log('$urlRouterProvider', $urlRouterProvider)
     console.log('control', homeCtrl.control)
     $stateProvider
-        .state('home', {url: '/', templateUrl: '/public/html/home.html', controller: homeCtrl.control, controllerAs: 'vm'})
+        .state('home', {url: '/', templateUrl: '/html/home.html', controller: homeCtrl.control, controllerAs: 'vm'})
 })
